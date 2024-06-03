@@ -1,0 +1,30 @@
+{% extends 'plantillabase.html' %}
+
+
+{%  block body %}
+{% if mensaje %}
+
+<p class="mensaje ">{{mensaje}}</p>
+
+{% endif %}
+
+
+<form method ="POST">
+    {% csrf_token %}
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="correo">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="contraseña">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="margin-top: 0.5%;">Enviar</button>
+
+
+</form>
+
+{% include 'parrafos.html' %}
+
+{%   endblock  %}
